@@ -10,6 +10,7 @@
     --dark-color-e: #D2691E;
     --dark-color-f: #2F4F4F;
     --dark-color-g: #F5F5F5;
+    --dark-color-h: #6f9b9b;
 }
 
 * {
@@ -37,7 +38,7 @@ a {
     cursor: pointer;
     padding: 5px 15px;
     background: var(--light-color);
-    color: var(--dark-color-a);
+    color: var(--dark-color-c);
     border: 0;
     font-size: 17px;
 }
@@ -53,7 +54,7 @@ a {
 }
 
 .chat-header {
-    background: var(--dark-color-f);
+    background: var(--dark-color-h);
     color: #fff;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -143,7 +144,7 @@ a {
 .join-header {
     text-align: center;
     padding: 20px;
-    background: var(--dark-color-a);
+    background: var(--dark-color-c);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
@@ -183,6 +184,14 @@ a {
 .join-main .btn {
     margin-top: 20px;
     width: 100%;
+}
+
+.username {
+    color: #38383a
+}
+
+.userroom {
+    color: rgb(54, 54, 54)
 }
 
 @media (max-width: 700px) {

@@ -8,7 +8,9 @@ const io = socketio(server);
 const textFormat = require('./utils/textMessage');
 const {
     getJoinedUser,
-    getCurrentUser
+    getCurrentUser,
+    Leftuser,
+    getRoomUsers
 } = require('./utils/user');
 
 // Set static folder
@@ -21,6 +23,11 @@ io.on('connection', socket => {
         socket.join(user.room);
         socket.emit('message', textFormat(chatBot, "welcome to chat"));
         socket.broadcast.to(user.room).emit('message', textFormat(chatBot, `${user.username} has joined the chat`));
+
+        io.to(user.room).emit('roomUsers', {
+            room: user.room,
+            users: getRoomUsers(user.room)
+        });
     })
 
 
@@ -30,6 +37,22 @@ io.on('connection', socket => {
         io.emit('message', textFormat(user.username, msg))
         console.log(msg)
     })
+    socket.on('disconnect', () => {
+        const user = Leftuser(socket.id);
+
+        if (user) {
+            io.to(user.room).emit(
+                'message',
+                textFormat(chatBot, `${user.username} has left the chat`)
+            );
+
+            // Send users and room info
+            io.to(user.room).emit('roomUsers', {
+                room: user.room,
+                users: getRoomUsers(user.room)
+            });
+        }
+    });
 })
 
 
