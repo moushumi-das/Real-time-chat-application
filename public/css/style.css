@@ -9,6 +9,7 @@
     --dark-color-d: #FF7F50;
     --dark-color-e: #D2691E;
     --dark-color-f: #2F4F4F;
+    --dark-color-g: #F5F5F5;
 }
 
 * {
@@ -116,7 +117,7 @@ a {
 
 .chat-form-container {
     padding: 20px 30px;
-    background-color: var(--dark-color-f);
+    background-color: var(--dark-color-g);
 }
 
 .chat-form-container form {
@@ -149,7 +150,7 @@ a {
 
 .join-main {
     padding: 30px 40px;
-    background: var(--dark-color-b);
+    background: var(--dark-color-g);
 }
 
 .join-main p {

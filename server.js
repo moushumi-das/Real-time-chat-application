@@ -13,7 +13,7 @@ const {
 
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
-const chatBot = 'ChatCord Bot';
+const chatBot = 'LetsChat Bot';
 io.on('connection', socket => {
     socket.on('joinRoom', ({ username, room }) => {
         const user = getJoinedUser(socket.id, username, room);
