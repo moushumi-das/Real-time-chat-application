@@ -118,6 +118,8 @@ a {
 
 .chat-form-container {
     padding: 20px 30px;
+    border-style: solid;
+    border-color: rgb(224, 220, 220);
     background-color: var(--dark-color-g);
 }
 
